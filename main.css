@@ -3,7 +3,8 @@
 	width: 700px;
 }
 
-.questions {
-	display: none;
 
+.hidden {
+	visibility: hidden;
 }
+

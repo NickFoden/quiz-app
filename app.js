@@ -1,3 +1,5 @@
+$(document).ready(function(){
+
 var questionsRight = 0;
 
 var quiz = {
@@ -6,16 +8,16 @@ var quiz = {
 	questions : [
 	{ 
 		text : "In the first film, arguably the greatest of all time, what is the name of the limo driver that picks up John from the airport?",
-	 	answers : ["Anthony", "Chris", "Argyle", "Adrian"},
+	 	answers : ["Anthony", "Chris", "Argyle", "Adrian"],
 	 	correct : 2 
 	 },
 	{
 		text : "Die Hard One took place in Chicago",
-		answers : [ "True", "False"]
+		answers : [ "True", "False"],
 		correct : 1
 	},
 	{ 
-		text : "John’s wife Holly is listed in the building directory with her maiden name, Gennaro. What does she say is the reason for doing this?", 
+		text : 'John’s wife Holly is listed in the building directory with her maiden name, Gennaro. What does she say is the reason for doing this?', 
 		answers : ["to get ahead in the corporate world", "it’s a Japanese company", "not sure if John was coming to LA", "just to keep things simple for now"],
 		correct : 1
 	},
@@ -40,24 +42,55 @@ var quiz = {
 		correct : 1
 	},
 	{ 
-		text : "Midway through the film John teams up with a truck driver named Jerry to drive through the aqueduct tunnel. Jerry solves a riddle for John. “What is 21 out of 42?” Who does Jerry tell John that the 21st president is?", 
+		text : "Midway through the film John teams up with a truck driver named Jerry to drive through the aqueduct tunnel. Jerry solves a riddle for John. What is 21 out of 42?” Who does Jerry tell John that the 21st president is?", 
 		answers : ["Hilary A. Clinton", "Grover A. Cleveland", "James A. Garfield" , "Chester A. Arthur"], 
 		answer : 3
-	},
-]
-}
-
-
-var renderQuestion = function(problem, number) {
-	var itemHtml = "";
-	for problems[i] {
-
 	}
+]
+};
+
+$("#title").text(quiz.name);
+$(".wrap").text(quiz.description);
+
+$("#start").on('click', function starting(){
+	$("#start").addClass("hidden");
+	displayQuestion();
+});
+ 
+ var currentQuestion = 0;
+
+  function displayQuestion() {
+    var html = "";
+    html += "<form id='quizForm'>";
+    html += `<h3> ${quiz.questions[currentQuestion].text} </h3>`;
+    for (var i=0; i<quiz.questions[currentQuestion].answers.length; i++) {
+       html += `<input type="radio" name="answers" value="${i}"> ${quiz.questions[currentQuestion].answers[i]} <br>`;
+    }
+    html += "<button type='submit'>Submit</button>";
+    html += "</form>";
+
+    $(".wrap").html(html);
+  }
+
+
+$(".wrap").on('submit', '#quizForm', function(e) {
+    e.preventDefault();
+    currentQuestion++;
+    if (currentQuestion === quiz.questions.length) {
+      showResults();
+    } else {
+      displayQuestion();
+    }
+  });
+
+function showResults(f){
+	f.preventDefault();
+	var answers = "";
+	answers += '<h3> "Nice first try, you got "';
+	answers += questionsRight;
+	answers += " out of ";
+	answers += quiz.questions.length;
+	answers += '</h3>';
 }
 
-$('#quiz').submit(function(event) {
-	event.preventDefault();
-	renderQuestion(problems[0]);
-
-
-}
+})
