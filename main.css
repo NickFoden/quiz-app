@@ -23,4 +23,14 @@ h1 {
   margin-top: 50px;
   width: 150px;
   text-align: center;
+  margin-left: 50px;
+}
+
+img {
+  margin-top: 50px;
+  height: auto;
+  width: 300px; 
+  border-style: solid;
+  border-width: 3px;
+  border-color: black;
 }
