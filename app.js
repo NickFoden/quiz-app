@@ -65,7 +65,7 @@ $(document).ready(function(){
     for (var i=0; i<quiz.questions[currentQuestion].answers.length; i++){
       html += `<input type="radio" name="answers" value="${i}"> ${quiz.questions[currentQuestion].answers[i]} <br>`;
     }
-    html += "<button type='submit'>Submit</button>";
+    html += "<br><button type='submit'>Submit</button>";
     html += "</form>";
 
     $(".wrap").html(html);
