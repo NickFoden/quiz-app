@@ -5,7 +5,7 @@ $(document).ready(function(){
 
   var quiz = {
     name: "Die Hard Quiz",
-    description : "How well do you know the Die Hard Series?",
+    description : "How well do you know the Die Hard Trilogy?",
     questions : [
       { 
         text : "In the first film, arguably the greatest of all time, what is the name of the limo driver that picks up John from the airport?",
