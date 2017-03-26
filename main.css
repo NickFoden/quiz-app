@@ -1,3 +1,15 @@
+
+#body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 100px;
+}
+
+h1 {
+  margin-left: 50px;
+}
+
 .wrap {
 	margin: 0, auto;
 	width: 700px;
@@ -7,3 +19,8 @@
 	visibility: hidden;
 }
 
+#start {
+  margin-top: 50px;
+  width: 150px;
+  text-align: center;
+}
