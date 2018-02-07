@@ -72,7 +72,7 @@ $(document).ready(function() {
           "In the 3rd Die Hard film, arguably the 3rd greatest of all time, John is forced to run around NY doing what Hans Gruber's brother tells him to do. John is nursing a pretty solid hangover, and on the way to their first stop in Harlem, officers are discussing 14 dump trucks were stolen overnight from a yard in Staten Island. Who did Officer Lamber suggest the trucks were stolen by?",
         answers: ["Simon Gruber", "John's Land Lady", "Zeus", "Santa Claus"],
         correct: 1,
-        image: "./images/JoeLambert"
+        image: "./images/JoeLambert.jpg"
       },
       {
         text:
@@ -112,7 +112,7 @@ $(document).ready(function() {
       quiz.questions[currentQuestion].text
     } </h3>`;
     for (var i = 0; i < quiz.questions[currentQuestion].answers.length; i++) {
-      html += `<input type="radio" name="answers" value="${i}"> ${
+      html += `<input type="radio" name="answers" class="quiz-answers" value="${i}"> ${
         quiz.questions[currentQuestion].answers[i]
       } <br>`;
     }
@@ -151,20 +151,14 @@ $(document).ready(function() {
   let winnerAl = "./images/AlPowell.jpg";
   function showResults() {
     if (questionsRight == quiz.questions.length) {
-      var answers = "";
-      answers += "<h3> WHOA THERE you deserve a medal for  ";
-      answers += questionsRight;
-      answers += " out of ";
-      answers += quiz.questions.length;
-      answers += "</h3>";
+      var answers = `<h3> WHOA THERE you deserve a medal for ${questionsRight} out of ${
+        quiz.questions.length
+      }</h3>`;
       answers += `<img class="question-image" src="${winnerAl}"></img>`;
     } else {
-      var answers = "";
-      answers += "<h3> Nice try, you got ";
-      answers += questionsRight;
-      answers += " out of ";
-      answers += quiz.questions.length;
-      answers += "</h3>";
+      var answers = `<h3> Nice try, you got ${questionsRight} out of ${
+        quiz.questions.length
+      }</h3>`;
     }
 
     $(".wrap").html(answers);
