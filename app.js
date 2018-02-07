@@ -149,6 +149,7 @@ $(document).ready(function() {
     }
   });
   let winnerAl = "./images/AlPowell.jpg";
+  let bruceToes = "./videos/fistsWithToes.mp4";
   function showResults() {
     if (questionsRight == quiz.questions.length) {
       var answers = `<h3> WHOA THERE you deserve a medal for ${questionsRight} out of ${
@@ -159,6 +160,7 @@ $(document).ready(function() {
       var answers = `<h3> Nice try, you got ${questionsRight} out of ${
         quiz.questions.length
       }</h3>`;
+      answers += `<video with="600" controls="controls"><source src="${bruceToes}" type="video/mp4" ></video>`;
     }
 
     $(".wrap").html(answers);
