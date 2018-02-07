@@ -162,7 +162,7 @@ $(document).ready(function() {
       }</h3>`;
       answers += `<video with="600" controls="controls"><source src="${bruceToes}" type="video/mp4" ></video>`;
     }
-
     $(".wrap").html(answers);
+    // $("#start").addClass("show");
   }
 });
