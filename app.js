@@ -4,7 +4,7 @@ $(document).ready(function() {
 
   var quiz = {
     name: "Die Hard Quiz",
-    description: "How well do you know the Die Hard Trilogy?",
+    description: "Do you even Die Hard?",
     questions: [
       {
         text:
@@ -72,7 +72,7 @@ $(document).ready(function() {
           "In the 3rd Die Hard film, arguably the 3rd greatest of all time, John is forced to run around NY doing what Hans Gruber's brother tells him to do. John is nursing a pretty solid hangover, and on the way to their first stop in Harlem, officers are discussing 14 dump trucks were stolen overnight from a yard in Staten Island. Who did Officer Lamber suggest the trucks were stolen by?",
         answers: ["Simon Gruber", "John's Land Lady", "Zeus", "Santa Claus"],
         correct: 1,
-        image: "./images/FourteenDumpTrucks.jpg"
+        image: "./images/JoeLambert"
       },
       {
         text:
@@ -89,8 +89,12 @@ $(document).ready(function() {
     ]
   };
 
-  $("#title").text(quiz.name);
-  $(".wrap").text(quiz.description);
+  var syledQuizDescription = `<h1 class="quiz-description">${
+    quiz.description
+  }</h1>`;
+
+  // $("#title").text(quiz.name);
+  $(".wrap").html(syledQuizDescription);
 
   $("#start").on("click", function starting() {
     $("#start").addClass("hidden");
@@ -104,7 +108,9 @@ $(document).ready(function() {
       quiz.questions[currentQuestion].image
     }" class="question-image"></img>`;
     html += "<form id='quizForm'>";
-    html += `<h3> ${quiz.questions[currentQuestion].text} </h3>`;
+    html += `<h3 class="quiz-question"> ${
+      quiz.questions[currentQuestion].text
+    } </h3>`;
     for (var i = 0; i < quiz.questions[currentQuestion].answers.length; i++) {
       html += `<input type="radio" name="answers" value="${i}"> ${
         quiz.questions[currentQuestion].answers[i]
@@ -125,7 +131,7 @@ $(document).ready(function() {
 
   function displayTally() {
     var html = "";
-    html += `<p class="tally">Answers:</p>`;
+    html += `<p class="tally"></p>`;
     html += `<h3>${questionsRight} correct out of ${currentQuestion} so far</h3>`;
     $(".tally").html(html);
   }
@@ -134,21 +140,32 @@ $(document).ready(function() {
     e.preventDefault();
     tally();
     currentQuestion++;
-    displayTally();
     if (currentQuestion === quiz.questions.length) {
+      $(".tally").html("");
       showResults();
     } else {
       displayQuestion();
+      displayTally();
     }
   });
-
+  let winnerAl = "./images/AlPowell.jpg";
   function showResults() {
-    var answers = "";
-    answers += "<h3> Nice try, you got ";
-    answers += questionsRight;
-    answers += " out of ";
-    answers += quiz.questions.length;
-    answers += "</h3>";
+    if (questionsRight == quiz.questions.length) {
+      var answers = "";
+      answers += "<h3> WHOA THERE you deserve a medal for  ";
+      answers += questionsRight;
+      answers += " out of ";
+      answers += quiz.questions.length;
+      answers += "</h3>";
+      answers += `<img class="question-image" src="${winnerAl}"></img>`;
+    } else {
+      var answers = "";
+      answers += "<h3> Nice try, you got ";
+      answers += questionsRight;
+      answers += " out of ";
+      answers += quiz.questions.length;
+      answers += "</h3>";
+    }
 
     $(".wrap").html(answers);
   }
