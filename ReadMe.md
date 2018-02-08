@@ -1,3 +1,3 @@
-# Die Hard Quiz
+## [Do You Even Die Hard?](http://doyouevendiehard.netlify.com/ "Link to  Die Hard Quiz")
 
-Working on a quiz app that tests the user on their knowledge of Die Hard films. 
+(https://raw.githubusercontent.com/NickFoden/quiz-app/master/images/WelcomeToThePartyPal.jpg 'Welcome to the party pal')
