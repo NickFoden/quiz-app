@@ -1,3 +1,3 @@
-## [Do You Even Die Hard?](http://doyouevendiehard.netlify.com/ "Link to  Die Hard Quiz")
+## [Do You Even Die Hard?](http://doyouevendiehard.netlify.com/)
 
-(https://raw.githubusercontent.com/NickFoden/quiz-app/master/images/WelcomeToThePartyPal.jpg 'Welcome to the party pal')
+!(https://raw.githubusercontent.com/NickFoden/quiz-app/master/images/WelcomeToThePartyPal.jpg "Welcome to the party pal")
