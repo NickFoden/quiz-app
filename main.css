@@ -6,9 +6,10 @@
   display: grid;
   grid-template-columns: 1fr;
   margin: auto;
-  /* background-image: url("/images/WelcomeToThePartyPal.jpg"); */
-  background-repeat: no-repeat;
-  background-position: center;
+  background-image: url("/images/WelcomeToThePartyPal.jpg");
+  /* background-repeat: no-repeat; */
+  /* background-position: center; */
+  background-size: cover;
   padding: 50px;
 }
 
@@ -24,9 +25,7 @@ h1 {
 .hidden {
   display: none;
 }
-/* .show {
-  display: inline-block;
-} */
+
 .quiz-description {
   color: black;
   font-size: 50px;
