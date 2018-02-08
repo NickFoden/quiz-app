@@ -157,7 +157,7 @@ $(document).ready(function() {
       }</h3>`;
       answers += `<img class="question-image" src="${winnerAl}"></img>`;
       answers +=
-        "<p>Want to see another film turned into a quiz? Be able to set the difficulty level?</p>";
+        `<p>Want to see another film turned into a quiz? Be able to set the difficulty level?</p>`;
       answers += `<p><a href="http://nickis.online/#contact">Send Nick a note</a></p>`;
     } else {
       var answers = `<h3> Nice try, you got ${questionsRight} out of ${
@@ -165,7 +165,7 @@ $(document).ready(function() {
       }</h3>`;
       answers += `<video with="600" controls="controls"><source src="${bruceToes}" type="video/mp4" ></video>`;
       answers +=
-        "<p>Want to see another film turned into a quiz? Be able to set the difficulty level?</p>";
+        `<p>Want to see another film turned into a quiz? Be able to set the difficulty level?</p>`;
       answers += `<p><a href="http://nickis.online/#contact">Send Nick a note</a></p>`;
     }
     $(".wrap").html(answers);
